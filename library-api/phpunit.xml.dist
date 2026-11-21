@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+        bootstrap="vendor/autoload.php"
+        cacheDirectory=".phpunit.cache"
+        displayDetailsOnIncompleteTests="true"
+        displayDetailsOnSkippedTests="true"
+        displayDetailsOnTestsThatTriggerDeprecations="true"
+        displayDetailsOnTestsThatTriggerErrors="true"
+        displayDetailsOnTestsThatTriggerNotices="true"
+        displayDetailsOnTestsThatTriggerWarnings="true"
+        colors="true"
+>
+    <source>
+        <include>
+            <directory suffix=".php">./module/*/src</directory>
+        </include>
+    </source>
+
+    <php>
+        <env name="LIBRARY_TEST_DATABASE_URL" value="postgresql://library_user:library_pass@127.0.0.1:5432/library_test" force="false"/>
+    </php>
+
+    <testsuites>
+        <testsuite name="Library">
+            <directory>./module/*/test</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

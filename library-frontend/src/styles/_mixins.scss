@@ -1,0 +1,30 @@
+@mixin panel {
+  background: #fff;
+  border-radius: $card-border-radius;
+  box-shadow: $panel-shadow;
+}
+
+@mixin soft-pill($background, $color) {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 800px;
+  background: $background;
+  color: $color;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+@mixin icon-tile($size: 40px) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: $size;
+  height: $size;
+  border-radius: $border-radius;
+  background: $primary-soft;
+  color: $primary;
+}

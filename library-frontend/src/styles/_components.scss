@@ -1,0 +1,159 @@
+.page-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.icon-tile {
+  @include icon-tile(44px);
+}
+
+.page-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.page-intro {
+  max-width: 560px;
+  margin: 2px 0 0;
+  color: $muted-color;
+}
+
+.section-title {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.search-box {
+  max-width: 420px;
+}
+
+.status {
+  @include soft-pill(#f1f3f5, $muted-color);
+
+  &.status-available,
+  &.status-closed {
+    @include soft-pill(#e7f5ee, $success);
+  }
+
+  &.status-active {
+    @include soft-pill(#eef2f7, #344054);
+  }
+
+  &.status-overdue {
+    @include soft-pill(#fdecea, $danger);
+  }
+
+  &.status-awaiting_payment {
+    @include soft-pill(#fff4e5, $warning);
+  }
+}
+
+.role {
+  @include soft-pill(#f1f3f5, #344054);
+
+  &.role-operator {
+    @include soft-pill(#eef2f7, #344054);
+  }
+
+  &.role-super_admin {
+    @include soft-pill($primary-soft, $primary);
+  }
+}
+
+.empty-state {
+  @include panel;
+  padding: 48px 24px;
+  color: $muted-color;
+  text-align: center;
+}
+
+.empty-state-title {
+  margin-bottom: 4px;
+  color: $body-color;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.dialog-book {
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: 8px 16px;
+  padding: 16px 20px;
+  border-radius: $border-radius;
+  background: $page-bg;
+
+  dt {
+    color: $muted-color;
+    font-weight: 400;
+  }
+
+  dd {
+    margin: 0;
+    font-weight: 500;
+  }
+}
+
+.due-stamp {
+  display: grid;
+  justify-items: center;
+  flex-shrink: 0;
+  align-self: center;
+  min-width: 176px;
+  padding: 13px 20px 14px;
+  border: 3px double $primary;
+  border-radius: 6px;
+  color: $primary;
+  background: $primary-softer;
+  transform: rotate(-4deg);
+
+  &.due-stamp-overdue {
+    border: 3px double #fff;
+    color: #fff;
+    background: $danger;
+    box-shadow: 0 0 0 2px $danger;
+    transform: rotate(3deg);
+  }
+}
+
+.due-stamp-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.due-stamp-date {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.due-stamp-note {
+  font-size: 12px;
+  opacity: 90%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .loan-slip .due-stamp {
+    animation: stamp-in 250ms ease-out both;
+  }
+}
+
+@keyframes stamp-in {
+  from {
+    opacity: 0;
+    scale: 125%;
+  }
+}

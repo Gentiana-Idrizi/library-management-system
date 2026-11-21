@@ -1,0 +1,73 @@
+body {
+  background: $page-bg;
+  -webkit-font-smoothing: antialiased;
+}
+
+.panel {
+  @include panel;
+}
+
+.min-w-0 {
+  min-width: 0;
+}
+
+.form-label {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.table {
+  > thead th {
+    color: $muted-color;
+    font-size: 13px;
+    background: #fafbfc;
+    white-space: nowrap;
+  }
+
+  > tbody > tr:last-child > td {
+    border-bottom: 0;
+  }
+}
+
+.nav-tabs .nav-link {
+  color: $muted-color;
+  font-weight: 500;
+
+  &:hover {
+    color: $body-color;
+  }
+
+  &.active {
+    font-weight: 600;
+    background: transparent;
+    border-color: transparent transparent $primary;
+    border-bottom-width: 2px;
+  }
+}
+
+.modal-backdrop.show {
+  opacity: 40%;
+}
+
+.modal-content {
+  box-shadow: 0 24px 60px #10182833;
+}
+
+.modal-title {
+  font-weight: 600;
+}
+
+.toast {
+  color: #fff;
+  background: $body-color;
+  border: 0;
+  border-left: 4px solid $success;
+
+  &.toast-warn {
+    border-left-color: #f79009;
+  }
+
+  &.toast-bad {
+    border-left-color: #f04438;
+  }
+}

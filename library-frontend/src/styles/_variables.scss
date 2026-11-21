@@ -1,0 +1,57 @@
+$primary: #9f1d22;
+$primary-soft: #fbeced;
+$primary-softer: #fdf5f5;
+
+$success: #18794e;
+$warning: #b54708;
+$danger: #b42318;
+
+$body-bg: #fff;
+$page-bg: #f3f4f8;
+$body-color: #1f2430;
+$muted-color: #6b7280;
+$border-color: #e5e7eb;
+
+$font-family-sans-serif:
+  'Inter',
+  system-ui,
+  -apple-system,
+  'Segoe UI',
+  Roboto,
+  'Helvetica Neue',
+  Arial,
+  sans-serif;
+$font-size-base: 15px;
+$headings-font-weight: 600;
+$link-decoration: none;
+$link-hover-decoration: underline;
+
+$border-radius: 8px;
+$border-radius-sm: 6px;
+$border-radius-lg: 12px;
+
+$btn-font-weight: 500;
+$btn-padding-x: 16px;
+
+$card-border-width: 0;
+$card-border-radius: 10px;
+$card-cap-bg: #fff;
+
+$table-cell-padding-y: 13px;
+$table-cell-padding-x: 16px;
+$table-th-font-weight: 600;
+
+$nav-link-padding-y: 8px;
+$nav-link-padding-x: 16px;
+$nav-tabs-link-active-color: $primary;
+$nav-tabs-link-active-border-color: $border-color $border-color #fff;
+
+$modal-content-border-width: 0;
+$modal-header-border-width: 0;
+$modal-footer-border-width: 0;
+
+$sidebar-width: 272px;
+$topbar-height: 76px;
+$panel-shadow:
+  0 1px 2px #1018280f,
+  0 0 0 1px #1018280a;

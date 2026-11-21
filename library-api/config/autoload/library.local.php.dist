@@ -1,0 +1,11 @@
+<?php
+
+declare(strict_types=1);
+
+return [
+    'library' => [
+        'jwt' => [
+            'secret' => 'CHANGE-ME-to-a-random-string-of-at-least-32-characters',
+        ],
+    ],
+];
