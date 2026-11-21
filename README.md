@@ -13,23 +13,25 @@ book borrowing, returns, penalties, inventory, notifications and system logs.
 Requirements: PHP 8.3 with `pdo_pgsql`, Composer, PostgreSQL, Node.js 20+.
 
 ```powershell
-# Database (once)
 psql -U postgres -c "CREATE USER library_user WITH PASSWORD 'library_pass';"
 psql -U postgres -c "CREATE DATABASE library_db OWNER library_user;"
 psql -U postgres -c "CREATE DATABASE library_test OWNER library_user;"
 
-# API
 cd library-api
 composer install
+composer development-enable
+Copy-Item config\autoload\doctrine.local.php.dist config\autoload\doctrine.local.php
+(Get-Content config\autoload\library.local.php.dist) -replace 'CHANGE-ME-to-a-random-string-of-at-least-32-characters', (php -r "echo bin2hex(random_bytes(32));") | Set-Content config\autoload\library.local.php
 php vendor\bin\doctrine-module migrations:migrate --no-interaction
 php vendor\bin\laminas library:seed --demo
 composer test
-composer serve                      # http://127.0.0.1:8080
+composer serve
+```
 
-# Frontend (second terminal)
+```powershell
 cd library-frontend
 npm install
-npm run dev                         # http://localhost:5173
+npm run dev
 ```
 
 Demo logins: `ardian@admin.com` / `Admin123!`, `olta@operator.com` / `Operator123!`,
